@@ -6,6 +6,7 @@ var pairs = new Array(); //Store the id of the pair cards
 
 window.onload = function() {    
     getRandomNumbers();
+    createCards();
 }
 
 function getRandomNumbers() {
@@ -17,5 +18,26 @@ function getRandomNumbers() {
         }
         random_numbers[n] = number;
     }
+}
+
+function createCards() {
+    var container = document.getElementById("container");
+
+    for(var n = 0; n < random_numbers.length; n++) {
+        var card = document.createElement("img");
+        card.src = "Cards/" + cover;
+        card.setAttribute("class",cards[random_numbers[n]]);
+        card.setAttribute("id",n);
+        card.setAttribute("onclick","play(id)");
+        container.appendChild(card);
+    }
+}
+
+function play(id_card) {
+    var type_card = document.getElementById(id_card);
+    pairs.push(id_card);
+    type_card.src = "Cards/" + type_card.getAttribute("class");
+
+
 }
 
