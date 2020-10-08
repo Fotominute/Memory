@@ -38,6 +38,32 @@ function play(id_card) {
     pairs.push(id_card);
     type_card.src = "Cards/" + type_card.getAttribute("class");
 
-
+    if(pairs.length == 2) {
+        enableDisableEvent("d");
+        setTimeout(turnCard,1000);
+    }
 }
 
+function enableDisableEvent(type) {
+    var imgs = document.getElementsByTagName("img");
+
+    for(var n = 0; n < random_numbers.length; n++) {
+        if(type == "d") {
+            imgs[n].removeAttribute("onclick");
+        } else {
+            imgs[n].setAttribute("onclick","play(id)");
+        }
+    }
+}
+
+function turnCard() {
+    var card_a = document.getElementById(pairs[0]);
+    var card_b = document.getElementById(pairs[1]);
+
+    if(card_a.getAttribute("src") != card_b.getAttribute("src")) {
+        card_a.src = "Cards/" + cover;
+        card_b.src = "Cards/" + cover;
+    }
+    enableDisableEvent("e");
+    pairs = new Array();
+}
