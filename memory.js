@@ -1,5 +1,5 @@
-var cards = ["+2-rojo.PNG","+2-verde.PNG","7-azul.PNG","9-amarillo.PNG","+4.PNG","cambio-amarillo.PNG","cambio-azul.PNG","color.PNG","prohibido-amarillo.PNG","prohibido-rojo.PNG"];
-var cover = "portada.PNG";
+var cards = ["+2-red.png","+2-green.png","7-blue.png","9-yellow.png","+4.png","color-change-yellow.png","color-change-blue.png","color.png","prohibited-yellow.png","prohibited-red.png"];
+var cover = "cover.png";
 const LIMIT_CARDS = 20;
 var random_numbers = new Array(LIMIT_CARDS);
 var pairs = new Array(); //Store the id of the pair cards
